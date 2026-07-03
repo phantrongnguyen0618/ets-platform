@@ -1,0 +1,497 @@
+```markdown
+# ETS Data Platform
+
+> Enterprise Education Data Platform built with FastAPI, PostgreSQL, MongoDB, Neo4j and PySpark.
+
+---
+
+# 📖 Overview
+
+ETS Data Platform là nền tảng quản lý dữ liệu giáo dục được xây dựng theo kiến trúc **Polyglot Persistence**, kết hợp nhiều loại cơ sở dữ liệu nhằm tối ưu cho từng nghiệp vụ.
+
+Dự án hướng tới mô hình doanh nghiệp, đáp ứng các yêu cầu:
+
+- Quản lý dữ liệu tập trung
+- Chuẩn hóa dữ liệu
+- Metadata Management
+- Data Validation
+- ETL Pipeline
+- Graph Relationship
+- Dashboard quản trị
+- RESTful API
+- Khả năng mở rộng theo Microservice
+
+---
+
+# 🎯 Objectives
+
+Mục tiêu của dự án:
+
+- Xây dựng hệ thống quản lý dữ liệu quy mô lớn
+- Thiết kế kiến trúc Polyglot Persistence
+- Tối ưu hiệu năng lưu trữ
+- Quản lý Metadata độc lập
+- Chuẩn hóa dữ liệu trước khi lưu
+- Hỗ trợ ETL với PySpark
+- Quản lý quan hệ dữ liệu bằng Neo4j
+- Phát triển REST API bằng FastAPI
+- Xây dựng Dashboard hiện đại bằng React
+
+---
+
+# 🏗 System Architecture
+
+```
+
+```
+                Users
+                  │
+                  ▼
+           React Frontend
+                  │
+      REST API / JWT Authentication
+                  │
+           FastAPI Backend
+                  │
+```
+
+┌───────────────┬───────────────┬────────────────┐
+│               │               │                │
+▼               ▼               ▼                ▼
+
+PostgreSQL    MongoDB         Neo4j         PySpark ETL
+(Core Data)   (Metadata)      (Graph)       (Data Pipeline)
+
+```
+
+---
+
+# 🏛 Architecture Style
+
+- Layered Architecture
+- Repository Pattern
+- Service Layer Pattern
+- Polyglot Persistence
+- Metadata Driven Design
+- ETL Pipeline
+- Modular Architecture
+
+---
+
+# 💻 Technology Stack
+
+## Backend
+
+- FastAPI
+- SQLAlchemy
+- Alembic
+- Pydantic v2
+- JWT Authentication
+- Uvicorn
+
+---
+
+## Frontend
+
+- React
+- Vite
+- HTML5
+- CSS3
+- JavaScript
+- Axios
+
+---
+
+## Database
+
+### PostgreSQL
+
+Lưu trữ dữ liệu nghiệp vụ chính.
+
+Ví dụ:
+
+- Student
+- Teacher
+- Wallet
+- Course
+- Department
+- Enrollment
+- Authentication
+
+---
+
+### MongoDB
+
+Lưu Metadata.
+
+Ví dụ:
+
+- Validation Rules
+- Metadata
+- Dynamic Schema
+- Asset Metadata
+- Wallet Metadata
+
+---
+
+### Neo4j
+
+Lưu quan hệ giữa dữ liệu.
+
+Ví dụ:
+
+Student
+
+↓
+
+Enroll
+
+↓
+
+Course
+
+↓
+
+Department
+
+↓
+
+Faculty
+
+---
+
+## Big Data
+
+- PySpark
+- Pandas
+- Apache Spark
+
+---
+
+## API
+
+- REST API
+- OpenAPI
+- Swagger UI
+
+---
+
+## Authentication
+
+- JWT
+- OAuth2
+- Refresh Token
+
+---
+
+## Deployment
+
+- Docker
+- Docker Compose
+- Nginx
+
+---
+
+## Version Control
+
+- Git
+- GitHub
+
+---
+
+# 📁 Project Structure
+
+```
+
+ets-data-platform/
+
+│
+├── backend/
+├── frontend/
+├── database/
+├── etl/
+├── deployment/
+├── docs/
+├── scripts/
+├── tests/
+├── .github/
+├── README.md
+├── LICENSE
+└── .gitignore
+
+```
+
+---
+
+# 📂 Backend Structure
+
+```
+
+backend/
+
+├── app/
+│
+├── api/
+│
+├── core/
+│
+├── db/
+│
+├── models/
+│
+├── schemas/
+│
+├── repositories/
+│
+├── services/
+│
+├── validators/
+│
+├── metadata/
+│
+├── graph/
+│
+├── middleware/
+│
+├── dependencies/
+│
+├── utils/
+│
+├── config/
+│
+├── logs/
+│
+├── static/
+│
+├── uploads/
+│
+└── main.py
+
+```
+
+---
+
+# 📂 Frontend Structure
+
+```
+
+frontend/
+
+├── public/
+│
+├── src/
+│
+│   ├── assets/
+│   ├── components/
+│   ├── layouts/
+│   ├── pages/
+│   ├── router/
+│   ├── hooks/
+│   ├── context/
+│   ├── services/
+│   ├── utils/
+│   ├── styles/
+│   ├── constants/
+│   ├── api/
+│   └── App.jsx
+│
+├── package.json
+└── vite.config.js
+
+```
+
+---
+
+# 📂 Database Structure
+
+```
+
+database/
+
+├── postgresql/
+│
+│   ├── schema/
+│   ├── migrations/
+│   ├── seed/
+│   └── functions/
+│
+├── mongodb/
+│
+│   ├── metadata/
+│   ├── validation/
+│   ├── indexes/
+│   └── seed/
+│
+└── neo4j/
+├── cypher/
+├── constraints/
+└── indexes/
+
+```
+
+---
+
+# 📂 ETL Structure
+
+```
+
+etl/
+
+├── extract/
+├── transform/
+├── load/
+├── jobs/
+├── pipelines/
+├── configs/
+├── datasets/
+├── logs/
+└── spark_session.py
+
+```
+
+---
+
+# 📂 Deployment
+
+```
+
+deployment/
+
+├── docker/
+├── kubernetes/
+├── nginx/
+├── monitoring/
+└── compose/
+
+```
+
+---
+
+# 📂 Documentation
+
+```
+
+docs/
+
+├── architecture/
+├── database/
+├── api/
+├── diagrams/
+├── requirements/
+├── meeting/
+├── reports/
+└── images/
+
+```
+
+---
+
+# 📂 Scripts
+
+```
+
+scripts/
+
+├── init_db.py
+├── seed_db.py
+├── backup.py
+├── restore.py
+├── migrate.py
+└── clean.py
+
+```
+
+---
+
+# 📂 Testing
+
+```
+
+tests/
+
+├── unit/
+├── integration/
+├── api/
+├── performance/
+└── security/
+
+```
+
+---
+
+# 🔄 Data Flow
+
+```
+
+Raw Data
+
+↓
+
+Validation
+
+↓
+
+Normalization
+
+↓
+
+Metadata Generation
+
+↓
+
+PostgreSQL
+
+↓
+
+MongoDB Metadata
+
+↓
+
+Neo4j Relationship
+
+↓
+
+REST API
+
+↓
+
+React Dashboard
+
+```
+
+---
+
+# 📌 Design Principles
+
+- Single Responsibility Principle
+- Open Closed Principle
+- Repository Pattern
+- Dependency Injection
+- Metadata Driven Design
+- Polyglot Persistence
+- Clean Architecture
+- Scalable Architecture
+- Enterprise Coding Standard
+
+---
+
+# 🚀 Development Roadmap
+
+- Phase 1: Database Design
+- Phase 2: Metadata System
+- Phase 3: Backend API
+- Phase 4: Authentication
+- Phase 5: ETL Pipeline
+- Phase 6: React Dashboard
+- Phase 7: Testing
+- Phase 8: Docker Deployment
+- Phase 9: Monitoring
+- Phase 10: Production Release
+
+---
+
+# 📄 License
+
+This project is developed for educational and enterprise research purposes.
+
+```
