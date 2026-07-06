@@ -1,0 +1,36 @@
+# Application Configuration for Yelp Data Platform
+
+app:
+  name: "Yelp Data Engineering Platform"
+  env: "development"
+  version: "1.0.0"
+
+minio:
+  endpoint: "http://localhost:9000"
+  access_key: "minioadmin"
+  secret_key: "minioadmin"
+  secure: false
+  buckets:
+    raw: "yelp-raw"
+    bronze: "yelp-bronze"
+    silver: "yelp-silver"
+    gold: "yelp-gold"
+
+postgres:
+  host: "localhost"
+  port: 5432
+  database: "yelp_dwh"
+  username: "postgres"
+  password: "postgres"
+
+spark:
+  master: "local[*]"
+  driver_memory: "4g"
+  executor_memory: "4g"
+  sql:
+    shuffle_partitions: 20
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: true

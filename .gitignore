@@ -1,0 +1,111 @@
+# ==========================================
+# Yelp Data Engineering Platform .gitignore
+# ==========================================
+
+# --- Big Data & Local Datasets ---
+# Ignore raw large datasets but keep the directory layout
+datasets/raw/*
+!datasets/raw/.gitkeep
+datasets/sample/*
+!datasets/sample/.gitkeep
+datasets/metadata/*
+!datasets/metadata/.gitkeep
+
+# --- Database & Container Local Storage ---
+# Avoid committing local database mounts, persistent states, and data lake buckets
+storage/minio/*
+!storage/minio/.gitkeep
+storage/postgres/*
+!storage/postgres/.gitkeep
+
+# --- Environment & Secret Files ---
+.env
+.env.local
+.env.*.local
+*.env
+*.pem
+*.key
+*.cert
+secrets/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# --- Virtual Environments ---
+.venv/
+venv/
+ENV/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- PySpark / Hadoop / Derby ---
+spark-warehouse/
+metastore_db/
+derby.log
+*.h5
+*.parquet
+*.delta
+checkpoint/
+.checkpoint/
+
+# --- Apache Airflow ---
+logs/
+airflow/logs/
+airflow/airflow.db
+airflow/webserver_config.py
+airflow/unittests.cfg
+
+# --- Testing & Code Quality ---
+.ipynb_checkpoints/
+.pytest_cache/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# --- Editors & IDEs ---
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.swo
+.project
+.pydevproject
+.settings/
+
+# --- Operating Systems ---
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini

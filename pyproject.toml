@@ -1,0 +1,37 @@
+[tool.poetry]
+name = "yelp-data-engineering"
+version = "1.0.0"
+description = "Production-grade ETL pipeline for Yelp academic datasets using PySpark, Airflow, MinIO, and PostgreSQL"
+authors = ["Nguyen <nguyen@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pyspark = "3.4.0"
+boto3 = "^1.28.0"
+psycopg2-binary = "^2.9.6"
+fastapi = "^0.100.0"
+uvicorn = "^0.22.0"
+sqlalchemy = "^2.0.0"
+great-expectations = "^0.17.0"
+pandas = "^2.0.0"
+python-dotenv = "^1.0.0"
+pyyaml = "^6.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+black = "^23.3.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+mypy = "^1.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 120
